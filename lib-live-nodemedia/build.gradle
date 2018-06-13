@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.base.nodemedia'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.appTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes{
+        release{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions{
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.github.lbh283681056:base:1.0.0'
+    implementation ('com.github.NodeMedia:NodeMediaClient-Android:2.4.2') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
+}

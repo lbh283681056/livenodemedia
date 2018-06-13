@@ -1,0 +1,6 @@
+.DS_Store
+.gradle
+.idea
+build
+lib-live-nodemedia.iml
+livenodemedia.iml
